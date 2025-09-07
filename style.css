@@ -34,7 +34,7 @@ main{
   border-radius: 2rem;
   backdrop-filter: blur(5px);
 
-  /* animation: open 5s cubic-bezier(0.215, 0.610, 0.355, 1); */
+  animation: open 5s cubic-bezier(0.215, 0.610, 0.355, 1);
 }
 
 @keyframes open{
@@ -51,8 +51,7 @@ main{
 }
 
 section#intro{
-  /* animation: intro 7s ease-in-out forwards; */
-  display: none;
+  animation: intro 7s ease-in-out forwards;
 
   & h1{
     font-size: 3rem;
@@ -90,7 +89,7 @@ section#app{
 
   position: relative;
 
-  /* animation: app 7s ease-in-out; */
+  animation: app 7s ease-in-out;
 }
 
 @keyframes app {
