@@ -147,7 +147,6 @@ h2{
   color:#fffc;
   background: transparent;
   border-radius: 100%;
-
   transition: background .2s;
 }
 
@@ -158,28 +157,62 @@ h2{
 
 .icon{
   position: relative;
+  cursor: pointer;
+}
+
+.icon.active > i{
+  background: #000;
+  color: #fff;
+}
+
+.icon.active > .icon-background{
+  opacity: 1;
+  scale: 1;
 }
 
 .icons-box i:hover + .icon-background{
-    opacity: 1;
-    scale: 1;
+  opacity: 1;
+  scale: 1;
 }
 
 .icon-background{
-    opacity: 0;
-    content: '';
-    position: absolute;
-    inset: -2px;
-    scale: 0.9;
-
-    border-radius: 100%;
-    background: conic-gradient(#222, #ccc, #222, #ccc, #222, #ccc, #222);
-
-    z-index: -1;
-    transition: opacity .2s;
-    animation: rotate 20s infinite linear;
+  opacity: 0;
+  content: '';
+  position: absolute;
+  inset: -2px;
+  scale: 0.9;
+  
+  border-radius: 100%;
+  background: conic-gradient(#222, #ccc, #222, #ccc, #222, #ccc, #222);
+  
+  z-index: -1;
+  transition: opacity .2s;
+  animation: rotate 20s infinite linear;
 }
 
+#searchInput{
+  width: 0;
+  height: auto;
+  padding-left: 8px;
+
+  opacity: 0;
+  color: #fff;
+  border: 1px #888 solid;
+  background-color: transparent;
+  border-radius: 4px;
+
+  transition: .5s;
+}
+
+#searchInput.active{
+  width: 200px;
+  opacity: 1;
+}
+
+#searchInput:focus{
+  outline: none;
+}
+  
 @keyframes rotate{
   from{
     rotate: 0deg;
