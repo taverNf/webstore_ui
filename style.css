@@ -414,18 +414,54 @@ nav{
 
   height: auto;
   width: 500px;
-  padding: 12px 24px;
+  padding: 6px 8px;
 
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 20px;
 
-  background-color: #fff;
-  border: 2px solid #000;
+  background: linear-gradient(-70deg, #000, #111, #000, #111, #111, #000, #222);
+  border: 1px solid #ccc;
   border-radius: 50px;
+  backdrop-filter: blur(100px);
+}
 
-  & .nav-item{
-    font-size: 18px;
-  }
+.nav-item{
+  position: relative;
+
+  padding: 8px 12px;
+
+  font-size: 1rem;
+  text-decoration: none;
+  font-weight: 300;
+
+  color: #ddd;
+
+  z-index: 1;
+  transition: color .2s;
+}
+
+.nav-item:hover{
+  color: #fff;
+}
+
+.nav-item:hover::before{
+  transform: scale(1);
+  opacity: 1;
+}
+
+.nav-item::before{
+  content: '';
+  position: absolute;
+  inset: 0;
+
+  background-color: #6661;
+  backdrop-filter: blur(5px);
+  border-radius: 2rem;
+
+  z-index: -1;
+  transform: scale(0.8);
+  opacity: 0;
+
+  transition: opacity .2s, transform .2s;
 }
